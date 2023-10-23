@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import CryptoJS from "crypto-js";
 import Img from "../img/img.png";
 import Attach from "../img/attach.png";
 import { AuthContext } from "../context/AuthContext";
@@ -28,6 +29,10 @@ const Input = () => {
         return;
       }
 
+      // Cifra el mensaje usando una clave secreta (podrías usar una clave derivada del usuario u otro método de intercambio de claves)
+      const secretKey = "clave-secreta"; // ¡Reemplaza esto con un método seguro para obtener o generar la clave!
+      const encryptedText = CryptoJS.AES.encrypt(text, secretKey).toString();
+
       if (img) {
         const storageRef = ref(storage, uuid());
         const uploadTask = uploadBytesResumable(storageRef, img);
@@ -40,7 +45,7 @@ const Input = () => {
             await updateDoc(doc(db, "chats", data.chatId), {
               messages: arrayUnion({
                 id: uuid(),
-                text,
+                text: encryptedText, // Envía el mensaje cifrado
                 senderId: currentUser.uid,
                 date: Timestamp.now(),
                 img: downloadURL,
@@ -54,7 +59,7 @@ const Input = () => {
         await updateDoc(doc(db, "chats", data.chatId), {
           messages: arrayUnion({
             id: uuid(),
-            text,
+            text: encryptedText, // Envía el mensaje cifrado
             senderId: currentUser.uid,
             date: Timestamp.now(),
           }),
@@ -63,14 +68,14 @@ const Input = () => {
 
       await updateDoc(doc(db, "userChats", currentUser.uid), {
         [data.chatId + ".lastMessage"]: {
-          text,
+          text: encryptedText, // Envía el mensaje cifrado
         },
         [data.chatId + ".date"]: serverTimestamp(),
       });
 
       await updateDoc(doc(db, "userChats", data.user.uid), {
         [data.chatId + ".lastMessage"]: {
-          text,
+          text: encryptedText, // Envía el mensaje cifrado
         },
         [data.chatId + ".date"]: serverTimestamp(),
       });
