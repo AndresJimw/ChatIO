@@ -1,0 +1,6 @@
+projectKey=ChatIO
+serverUrl=http://localhost:9000
+serverVersion=9.8.0.63668
+dashboardUrl=http://localhost:9000/dashboard?id=ChatIO
+ceTaskId=AYtcpZ8WEXniS4Xcy9td
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYtcpZ8WEXniS4Xcy9td
