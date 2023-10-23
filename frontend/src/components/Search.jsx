@@ -40,7 +40,7 @@ const Search = () => {
   };
 
   const handleSelect = async () => {
-    //check whether the group(chats in firestore) exists, if not create
+    //Revisa si el grupo chats en firestore existe, sino lo crea.
     const combinedId =
       currentUser.uid > user.uid
         ? currentUser.uid + user.uid
@@ -49,10 +49,10 @@ const Search = () => {
       const res = await getDoc(doc(db, "chats", combinedId));
 
       if (!res.exists()) {
-        //create a chat in chats collection
+        //Crea un chat en la colección chats
         await setDoc(doc(db, "chats", combinedId), { messages: [] });
 
-        //create user chats
+        //Crea userchats
         await updateDoc(doc(db, "userChats", currentUser.uid), {
           [combinedId + ".userInfo"]: {
             uid: user.uid,
@@ -87,7 +87,7 @@ const Search = () => {
           value={username}
         />
       </div>
-      {err && <span>User not found!</span>}
+      {err && <span>Usuario no encontrado.</span>}
       {user && (
         <div className="userChat" onClick={handleSelect}>
           <img src={user.photoURL} alt="" />

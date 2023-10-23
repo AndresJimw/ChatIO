@@ -42,7 +42,7 @@ const Message = ({ message }) => {
           }
           alt=""
         />
-        <span>just now</span>
+        <span>Enviado</span>
       </div>
       <div className="messageContent">
       <p>{decryptedText}</p> {/* Muestra el texto descifrado */}

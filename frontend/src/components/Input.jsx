@@ -29,8 +29,8 @@ const Input = () => {
         return;
       }
 
-      // Cifra el mensaje usando una clave secreta (podrías usar una clave derivada del usuario u otro método de intercambio de claves)
-      const secretKey = "clave-secreta"; // ¡Reemplaza esto con un método seguro para obtener o generar la clave!
+      // Cifra el mensaje usando una clave secreta (usa una clave derivada del usuario)
+      const secretKey = "clave-secreta"; 
       const encryptedText = CryptoJS.AES.encrypt(text, secretKey).toString();
 
       if (img) {
@@ -111,7 +111,7 @@ const Input = () => {
         <label htmlFor="file">
           <img src={Img} alt="" />
         </label>
-        <button onClick={handleSend}>Send</button>
+        <button onClick={handleSend}>ENVIAR</button>
       </div>
     </div>
   );

@@ -22,15 +22,15 @@ const Login = () => {
   return (
     <div className="formContainer">
       <div className="formWrapper">
-        <span className="logo">Khalessi Chat</span>
-        <span className="title">Login</span>
+        <span className="logo">CHAT</span>
+        <span className="title">LOGIN</span>
         <form onSubmit={handleSubmit}>
           <input type="email" placeholder="email" />
           <input type="password" placeholder="password" />
-          <button>Sign in</button>
-          {err && <span>Something went wrong</span>}
+          <button>Iniciar sesión</button>
+          {err && <span>Algo salió mal</span>}
         </form>
-        <p>You don't have an account? <Link to="/register">Register</Link></p>
+        <p>¿No tienes una cuenta? <Link to="/register">Resgístrate</Link></p>
       </div>
     </div>
   );
