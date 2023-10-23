@@ -1,0 +1,127 @@
+/* Estilos del contenedor principal */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212; /* Fondo gris oscuro */
+    color: white;
+    height: 100vh;
+  }
+  
+  /* Estilos del campo de entrada de usuario */
+  .input-field {
+    background-color: #333333; /* Fondo gris */
+    border: 1px solid #555555; /* Borde gris más oscuro */
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .input-field-username {
+    background-color: #333333; /* Fondo gris */
+    border: 1px solid #555555; /* Borde gris más oscuro */
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  /* Estilos del área de chat */
+  .div-chat {
+    background-color: #333333; /* Fondo gris */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    overflow-y: auto;
+  }
+  
+  /* Estilos de los mensajes */
+  .message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Estilos de los propios mensajes */
+  .own-message {
+    background-color: #c5f2ff; /* Azul claro */
+    color: black;
+    text-align: right;
+    margin-left: auto;
+    width: fit-content;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 1px;
+}
+  
+  /* Estilos de los mensajes de otros usuarios */
+  .other-message {
+    background-color: #6C757D; /* Gris */
+    color: white;
+    text-align: left;
+    width: fit-content;
+    border-bottom-left-radius: 1px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  /* Estilos del remitente del mensaje */
+  .username {
+    font-weight: bold;
+    /* Azul claro */
+  }
+  
+  /* Estilos del formulario de entrada de mensajes */
+  .message-input-form {
+    background-color: #333333; /* Fondo gris */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilos del icono de emoji */
+  .emoji-icon {
+    cursor: pointer;
+    margin-right: 10px;
+    width: 70px;
+    padding-right: 20px;
+  }
+  
+  /* Estilos del botón de enviar */
+  .send-button {
+    background-color: #007BFF; /* Azul claro */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .send-button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+  }
+
+  /* Estilos del contenedor de mensajes */
+  .message-container {
+    background-color: #333333; /* Fondo gris */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    overflow-y: auto;
+    margin-bottom: 5px;
+  }
+  
